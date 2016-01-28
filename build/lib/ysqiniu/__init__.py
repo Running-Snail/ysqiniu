@@ -1,1 +1,0 @@
-from .ysqiniu import YSQiniu
