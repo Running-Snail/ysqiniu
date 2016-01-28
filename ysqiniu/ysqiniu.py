@@ -58,6 +58,8 @@ class YSQiniu(object):
         bucket = qiniu.BucketManager(self._auth)
         stat = bucket.stat(bucket_name, filename)
         logging.info(stat)
+        if stat[0] is None:
+            return False
         if len(stat) > 0 and 'hash' in stat[0]:
             return True
         return False
